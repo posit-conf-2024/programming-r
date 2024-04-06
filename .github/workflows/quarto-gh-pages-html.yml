@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -43,7 +43,7 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # hard-coding `_site` feels a little gross, but it works
           path: _site
@@ -59,19 +59,20 @@ jobs:
         shell: Rscript {0}
       
   deploy:
-    if: github.event_name != 'pull_request'
+    # TODO: remove "false" when ready to publish
+    if: ${{ false && (github.event_name != 'pull_request') }}
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         
       - name: Setup pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
         
       - name: Deploy to GitHub pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
         
