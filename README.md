@@ -1,24 +1,29 @@
-# From R User to R Programmer
+From R User to R Programmer
+================
 
-**posit::conf 2023**
+### posit::conf(2024)
 
 by Emma Rand and Ian Lyttle
 
-:spiral_calendar: September 18, 2023\
-:alarm_clock: 09:00 - 17:00\
-:hotel: Grand Hall MN\
-:writing_hand: [pos.it/conf](http://pos.it/conf)
+-----
 
-------------------------------------------------------------------------
+:spiral_calendar: August 12, 2024  
+:alarm_clock:     09:00 - 17:00  
+:hotel:           ROOM TBD  
+:writing_hand:    [pos.it/conf](http://pos.it/conf)
 
-## Overview
+-----
+
+## Description
 
 This is a one-day, hands-on workshop for those who have embraced the tidyverse and want to improve their R programming skills and, especially, reduce the amount of duplication in their code. The two main ways to reduce duplication are creating functions and using iteration. We will use a tidyverse approach to cover function design and iteration with {purrr}.
 
 -   Master the art of writing functions that do one thing well, adhere to existing conventions and can be fluently combined together to solve more complex problems.
 -   Learn how to perform the same action on many objects using code which is succinct and easy to read.
 
-### This workshop is for you if you...
+## Audience
+
+This workshop is for you if you...
 
 -   have experience equivalent to an introductory data science course using tidyverse
 -   feel comfortable with the [Whole game](https://r4ds.hadley.nz/whole-game.html) chapter of [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/) by by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
@@ -44,8 +49,6 @@ In short:
 More details on our [pre-requisites page](https://posit-conf-2023.github.io/programming-r/pre-reqs.html).
 
 ## Schedule
-
-### Day 1
 
 | Time          | Activity       |
 |:--------------|:---------------|
