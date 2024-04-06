@@ -59,7 +59,8 @@ jobs:
         shell: Rscript {0}
       
   deploy:
-    if: github.event_name != 'pull_request'
+    # TODO: remove "false" when ready to publish
+    if: ${{ false }} && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
