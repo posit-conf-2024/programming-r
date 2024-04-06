@@ -30,7 +30,7 @@ This workshop is for you if you...
 
 ### Please note
 
-These materials are under active development, which will likely continue until the start of the workshop. Given this context: if you have a concern, please [file an issue](https://github.com/posit-conf-2023/programming-r/issues).
+These materials are under active development, which will likely continue until the start of the workshop. Given this context: if you have a concern, please [file an issue](https://github.com/posit-conf-2024/programming-r/issues).
 
 ## Prework
 
@@ -46,7 +46,7 @@ In short:
 
     Closer to the start of the conference, we will invite you to the posit::conf() Discord server.
 
-More details on our [pre-requisites page](https://posit-conf-2023.github.io/programming-r/pre-reqs.html).
+More details on our [pre-requisites page](https://posit-conf-2024.github.io/programming-r/pre-reqs.html).
 
 ## Schedule
 
