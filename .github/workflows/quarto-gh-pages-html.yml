@@ -60,7 +60,7 @@ jobs:
       
   deploy:
     # TODO: remove "false" when ready to publish
-    if: ${{ false }} && github.event_name != 'pull_request'
+    if: ${{ false && (github.event_name != 'pull_request') }}
     needs: build
     runs-on: ubuntu-latest
     environment:
