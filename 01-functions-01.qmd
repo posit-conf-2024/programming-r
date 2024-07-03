@@ -145,7 +145,7 @@ We built this course using the most-recent versions of R (4.4) and RStudio (2024
 ## Schedule {.smaller}
 
 | Time          | Activity                                                                                    |
-|:--------------|:--------------------------------------------------------------------------------------------|
+|:---------------------|:------------------------------------------------|
 | 09:00 - 10:30 | [Functions 1](01-functions-01.html) Introduction, vector and dataframe functions, embracing |
 | 10:30 - 11:00 | ☕ *Coffee break*                                                                           |
 | 11:00 - 12:30 | [Functions 2](02-functions-02.html) Plot functions, style and side effects                  |
@@ -156,7 +156,7 @@ We built this course using the most-recent versions of R (4.4) and RStudio (2024
 
 ## How we will work
 
--   stickies
+-   stickies (TODO, update with current colors)
 
     -   🟦 I'm all good, I'm done
 
