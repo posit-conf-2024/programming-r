@@ -1,7 +1,7 @@
 ---
 title: "useR to programmeR"
 subtitle: "👋 & Functions 1"
-author: "Emma Rand and Ian Lyttle <br>WiFi: Posit Conf 2023<br>Password: conf2023"
+author: "Emma Rand and Ian Lyttle <br>WiFi: TODO<br>Password: TODO"
 format: 
   revealjs:
     theme: [simple, styles.scss]
@@ -36,17 +36,13 @@ Emma Rand
 
 🐘[\@3mma\@mastodon.social](https://mastodon.social/@3mma)
 
-Garrett Grolemund
-
-Stephanie Hazlitt
+Thomas Lin Pedersen
 :::
 
 ::: {.column width="45%"}
 Ian Lyttle
 
 🐘[\@ijlyttle\@vis.social](https://mastodon.social/@ijlyttle@vis.social)
-
-Mouna Belaid
 :::
 :::
 
@@ -62,8 +58,8 @@ Mouna Belaid
 
 ### WiFi
 
--   Network: Posit Conf 2023
--   Password: conf2023
+-   Network: TODO
+-   Password: TODO
 
 ## Introductions
 
@@ -112,6 +108,8 @@ Reporting:
 
 ## Housekeeping
 
+TODO: Update
+
 -   There are gender-neutral bathrooms located are among the Grand Suite Bathrooms.
 -   Meditation/prayer rooms: Grand Suite 2A and Grand Suite 2B. Open Sunday - Tuesday 07:30 - 19:00, Wednesday 08:00 - 18:00
 -   Lactation room: in Grand Suite 1. Open Sunday - Tuesday 07:30 - 19:00, Wednesday 08:00 - 18:00
@@ -119,7 +117,7 @@ Reporting:
 
 ## 🙏 to
 
--   the Steph, Mouna and Garrett
+-   Thomas
 
 -   colleagues, friends and learners at Schneider Electric, University of York and RForwards!
 
@@ -135,17 +133,19 @@ Reporting:
 
 ## Prerequisites
 
-You need a laptop with the following installed:
+We built this course using the most-recent versions of R (4.4) and RStudio (2024.04). However, things *should* work with at least R 4.2 and RStudio 2023.03. You will need packages:
 
--   R version ≥4.2 and RStudio ≥2023.03
--   The following packages: {tidyverse}, {palmerpenguins}, {devtools}, {here}
+-   {tidyverse}
+-   {palmerpenguins}
+-   {devtools}
+-   {here}
 
 🎬 Detailed instructions for installing these were covered in [Prerequisites](pre-reqs.html)
 
 ## Schedule {.smaller}
 
 | Time          | Activity                                                                                    |
-|:--------------------|:--------------------------------------------------|
+|:--------------|:--------------------------------------------------------------------------------------------|
 | 09:00 - 10:30 | [Functions 1](01-functions-01.html) Introduction, vector and dataframe functions, embracing |
 | 10:30 - 11:00 | ☕ *Coffee break*                                                                           |
 | 11:00 - 12:30 | [Functions 2](02-functions-02.html) Plot functions, style and side effects                  |
@@ -186,25 +186,27 @@ At the end of this section you will be able to:
 
 ## Project
 
-https://github.com/posit-conf-2023/programming-r-exercises
+TODO: Update
+
+https://github.com/posit-conf-2024/programming-r-exercises
 
 🎬 Create a Project:
 
 ```{r}
 #| eval: false
 
-usethis::use_course("posit-conf-2023/programming-r-exercises")
+usethis::use_course("posit-conf-2024/programming-r-exercises")
 ```
 
 ## 
 
 ```         
-> usethis::use_course("posit-conf-2023/programming-r-exercises")
+> usethis::use_course("posit-conf-2024/programming-r-exercises")
 ✔ Downloading from 'https://github.com/posit-conf-2023/programming-r-exercises/zipball/HEAD'
 Downloaded: 0.26 MB  
-✔ Download stored in 'C:/Users/er13/OneDrive - University of York/Desktop/Desktop/posit-conf-2023-programming-r-exercises-978baff.zip'
-✔ Unpacking ZIP file into 'posit-conf-2023-programming-r-exercises-978baff/' (45 files extracted)
-Shall we delete the ZIP file ('posit-conf-2023-programming-r-exercises-978baff.zip')?
+✔ Download stored in 'C:/Users/er13/OneDrive - University of York/Desktop/Desktop/posit-conf-2024-programming-r-exercises-978baff.zip'
+✔ Unpacking ZIP file into 'posit-conf-2024-programming-r-exercises-978baff/' (45 files extracted)
+Shall we delete the ZIP file ('posit-conf-2024-programming-r-exercises-978baff.zip')?
 
 1: Not now
 2: Yeah
@@ -216,7 +218,7 @@ Shall we delete the ZIP file ('posit-conf-2023-programming-r-exercises-978baff.z
 ## 
 
 ```         
-✔ Deleting 'posit-conf-2023-programming-r-exercises-978baff.zip'
+✔ Deleting 'posit-conf-2024-programming-r-exercises-978baff.zip'
 ✔ Opening project in RStudio
 ```
 

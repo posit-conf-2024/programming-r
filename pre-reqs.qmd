@@ -10,16 +10,18 @@ bibliography: references.bib
 
 You will need:
 
--   [R and RStudio](#install-r-and-rstudio)  
--   To [install some packages](#packages) 
+-   [R and RStudio](#install-r-and-rstudio)\
+-   To [install some packages](#packages)
 -   To connect to [Discord](#discord), for in-class interaction
 
 ## Install R and RStudio {#install-r-and-rstudio}
 
 We will use:
 
--   R version \>= 4.3
--   RStudio \>= 2023.03.1
+-   R version \>= 4.4
+-   RStudio \>= 2024.04
+
+However, as long as you are using R \>= 4.2, and a recent version of RStudio, you should be fine.
 
 ## Install packages {#packages}
 
@@ -33,10 +35,10 @@ In case of any installation problems, you will also have access to a Posit Cloud
 
 ## Discord {#discord}
 
-During the workshop we will have experienced helpers to troubleshoot and will use Discord to enhance workshop interactions: 
+During the workshop we will have experienced helpers to troubleshoot and will use Discord to enhance workshop interactions:
 
-- [Please sign up for an account](https://discord.com/) if you don’t already have one.
-- Make sure your [display name](https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names#h_01GXPQABMYGEHGPRJJXJMPHF5C) is the one you used to register for the conference.
-- In your “About Me”, put the name of your workshop(s).
+-   [Please sign up for an account](https://discord.com/) if you don’t already have one.
+-   Make sure your [display name](https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names#h_01GXPQABMYGEHGPRJJXJMPHF5C) is the one you used to register for the conference.
+-   In your “About Me”, put the name of your workshop(s).
 
 Closer to the start of the conference, we will invite you to the posit::conf Discord server. Once you’ve accepted the invitation, we will add you to the channel(s) for your conference workshop(s).
