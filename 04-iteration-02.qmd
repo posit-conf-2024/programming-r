@@ -19,10 +19,10 @@ bibliography: references.bib
 
 In this session, we will discuss:
 
-:::{.incremental}
-  - using `purrr::map()` to read a bunch of files
-  - using `purrr::walk()` to write a bunch of files
-  - functional programming, more generally
+::: incremental
+-   using `purrr::map()` to read a bunch of files
+-   using `purrr::walk()` to write a bunch of files
+-   functional programming, more generally
 :::
 
 . . .
@@ -31,8 +31,8 @@ In this session, we will discuss:
 
 For coding, we will use `r-programming-exercises`:
 
- - `R/iteration-02-01-reading-files.R`, etc.
- - restart R
+-   `R/iteration-02-01-reading-files.R`, etc.
+-   restart R
 
 ## Reading multiple files
 
@@ -48,7 +48,7 @@ Read Excel files from a directory, then combine into a single data-frame.
 
 When you first call `here::here()`, (simplified):
 
-:::{.incremental}
+::: incremental
 -   climbs your local directory until it finds a `.RProj` file
 -   sets directory containing `.RProj` as reference-path
 -   `here::here()` prepends reference-path to argument
@@ -98,7 +98,7 @@ Run this example code, discuss with your neighbor.
 
 I see this as a two step problem:
 
-:::{.incremental}
+::: incremental
 -   make a named list of paths, name is year
 -   use list of paths to read data frames, combine
 :::
@@ -147,8 +147,8 @@ read_csv("not/a/file.csv")
 
 Function operators:
 
-  - take a function
-  - return a modified function
+-   take a function
+-   return a modified function
 
 . . .
 
@@ -175,7 +175,6 @@ poss_read_csv("not/a/file.csv")
 poss_read_csv(I("a, b\n 1, 2"), col_types = "dd")
 ```
 
-
 ## Our turn: handle failure
 
 In the `programming-r-exercises` repository:
@@ -195,16 +194,15 @@ Use this function in your script.
 
 Functional programming has three fundamental operations:
 
-:::{.incremental}
- - `filter()` - like spaghetti, not coffee: `purrr::keep()`
- - `map()` - do *this* to each element: `purrr::map()`
- - `reduce()` - combine into new thing: `purrr::reduce()`
+::: incremental
+-   `filter()` - like spaghetti, not coffee: `purrr::keep()`
+-   `map()` - do *this* to each element: `purrr::map()`
+-   `reduce()` - combine into new thing: `purrr::reduce()`
 :::
 
 ## Functional sandwiches
 
 ![[Anjana Vakil's Functional Sandwiches](https://observablehq.com/collection/@anjana/functional-javascript-first-steps)](images/anjana-vakil-functional-sanwiches.png){fig-alt="Shows ingredients of a sandwich: onions and pickles *filtered* out, remaining ingredients *mapped* to a slicer-function, then *reduced* to a sandwich" fig-align="center"}
-
 
 ## Horrible example
 
@@ -219,7 +217,7 @@ list_rbind2 <- function(df, names_to) {
 }
 ```
 
-:::{.incremental}
+::: incremental
 -   *filters* in not-`NULL` values, `purrr::keep()`
 -   *maps* name of element to data-column, `purrr::imap()`
 -   *reduces* list to single data-frame, `purrr::reduce()`
@@ -273,17 +271,16 @@ walk2(
 
 <hr>
 
-Create a `plot` column, where each element is a ggplot.
-This will be a list-column.
+Create a `plot` column, where each element is a ggplot. This will be a list-column.
 
 . . .
 
 You can use `map()`:
 
- - within `mutate()`, with all the tidy-eval goodness!
- - with additional arguments (after the function), e.g.:
-   
-```r
+-   within `mutate()`, with all the tidy-eval goodness!
+-   with additional arguments (after the function), e.g.:
+
+``` r
 mutate(
   plot = map(data, histogram, carat)
 )
@@ -291,9 +288,9 @@ mutate(
 
 . . .
 
-equivalent to 
+equivalent to
 
-```r
+``` r
 plot[[1]] = histogram(data[[1]], carat)
 plot[[2]] = histogram(data[[2]], carat)
 ...
@@ -317,7 +314,7 @@ by_clarity_plot <-
 
 ## Our turn: more starter-code
 
-```r
+``` r
 # ?ggplot2::ggsave()
 ggsave_local <- function(filename, plot) {
 
@@ -343,14 +340,13 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
   scale_color_discrete(labels = tolower) # tolower is a function
 ```
 
-
 ## If we have time (2)
 
 Three fundamental operations in functional programming
 
 Given a list and a function:
 
-:::{.incremental}
+::: incremental
 -   `filter()`: make a new list, subset of old list
 -   `map()`: make a new list, operating on each element
 -   `reduce()`: make a new "thing"
@@ -370,7 +366,7 @@ I claim it's possible, I don't claim it's a good idea.
 
 ## Tabular data: two perspectives
 
-:::{.incremental}
+::: incremental
 -   column-based: named list of column vectors
 
     ``` json
@@ -504,13 +500,13 @@ In JavaScript, data frames are often arrays of objects (lists), so you'll see fo
 
 ## Summary
 
-:::{.incremental}
-- you can use `purrr::map()` to read a bunch of files
-- you can use `purrr::walk()` to write a bunch of files
-- functional programming has three foundational operations:
-  - filter (`purrr::keep()`)
-  - map
-  - reduce
+::: incremental
+-   you can use `purrr::map()` to read a bunch of files
+-   you can use `purrr::walk()` to write a bunch of files
+-   functional programming has three foundational operations:
+    -   filter (`purrr::keep()`)
+    -   map
+    -   reduce
 :::
 
 . . .
@@ -521,9 +517,9 @@ Functional programming comes up a lot in JavaScript
 
 ## Wrap-up
 
-Please go to [pos.it/conf-workshop-survey](https://pos.it/conf-workshop-survey). 
+Please go to [pos.it/conf-workshop-survey](https://pos.it/conf-workshop-survey).
 
-Your feedback is crucial! 
+Your feedback is crucial!
 
 Data from the survey informs curriculum and format decisions for future conf workshops, and we really appreciate you taking the time to provide it.
 
@@ -531,9 +527,9 @@ Data from the survey informs curriculum and format decisions for future conf wor
 
 ### Thank you!
 
-:::{.incremental}
-- Emma
-- Steph, Mouna, Garrett
-- Mine Çetinkaya-Rundel, Posit
-- **You** 🤗
+::: incremental
+-   Emma
+-   Thomas
+-   Mine Çetinkaya-Rundel, Posit
+-   **You** 🤗
 :::
