@@ -17,18 +17,18 @@ website:
         text: Schedule
       - text: Materials
         menu:
-        - text: ---
+        - text: "---"
         - text: Functions
-        - text: ---
+        - text: "---"
         - text: "👋 & Functions Part 1"
           href: 01-functions-01.qmd
           target: "_blank"
         - text: "Functions Part 2"
           href: 02-functions-02.qmd
           target: "_blank"
-        - text: ---
+        - text: "---"
         - text: Iteration
-        - text: ---
+        - text: "---"
         - text: "Iteration Part 1"
           href: 03-iteration-01.qmd
           target: "_blank"
@@ -39,7 +39,8 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    from: markdown+emoji
+    css: styles.scss
     toc: true
 
 comments:
