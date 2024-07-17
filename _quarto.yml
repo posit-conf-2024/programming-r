@@ -23,6 +23,9 @@ website:
         - text: "👋 & Functions Part 1"
           href: 01-functions-01.qmd
           target: "_blank"
+        - text: "Functions Part 1 (advanced)"
+          href: 01-functions-01-advanced.qmd
+          target: "_blank"
         - text: "Functions Part 2"
           href: 02-functions-02.qmd
           target: "_blank"
