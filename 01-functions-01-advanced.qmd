@@ -2,7 +2,7 @@
 title: "Tools for type-checking"
 ---
 
-As a group, the students in this course arrive with a wide range of experience;
+Students in this course arrive with a wide range of experience;
 a bunch of you already how the basics of functions.
 For you, we offer this self-paced module, in the place of "Vector Functions".
 
@@ -10,16 +10,17 @@ This material is inspired by [Josiah Perry's excellent blog post](https://josiah
 
 ---
 
-One of the kindest things you can do for people you use your functions is to provide clear error messages. 
-When things go wrong, fail quickly and fail clearly. 
-Type-checking the arguments that users send your functions is a great opportunity to fail quickly.
-Using the type-checking functions provided by the {rlib} team lets you fail clearly.
+As a function-writer, one of the kindest things you can do is provide clear error messages. 
+When things go wrong, fail quickly and fail clearly.
 
-In this article, we will show you how to use the type-checking functions in your own functions: first in a script, then some tips on how to use them in a package.
+Type-checking the values of arguments sent to your functions is a great opportunity to fail quickly.
+Using the type-checking functions provided by the {rlang} team lets you fail clearly.
 
-Please keep in mind that this type-checking capability is under development by the Tidyverse team. 
-What we show you is what the Tidyverse team use, themselves, as of summer 2024.
-We can offer out best advice for now, but there is almost assuredly something more-documented and more-supported on the way.
+We will show how to use the type-checking functions in your own functions: first in a script, then some tips on how to use them in a package.
+
+Please keep in mind that this capability is under development by the Tidyverse team. 
+We will show you the tools the Tidyverse team use, themselves, as of Summer 2024.
+We can offer our best advice for now, but there is almost certainly something more-documented and more-supported on the way.
 
 ## Get started
 
@@ -42,7 +43,7 @@ For our examples, we will use {palmerpenguins}:
 library("palmerpenguins")
 ```
 
-Let's look at a function where we are not type-checking:
+Let's define a function where we do not add any type-checking:
 
 ```{r}
 to_z <- function(x, middle = 1) {
@@ -51,17 +52,20 @@ to_z <- function(x, middle = 1) {
 }
 ```
 
+When we supply a string to `middle`, we expect an error:
+
 ```{r}
 #| error: true
 to_z(penguins$bill_length_mm, middle = "1")
 ```
 
-The error we get here is not terribly helpful, especially if you have not *just* worked on this function yourself.
+This error is not terribly helpful, especially if you have not *just* worked on this function yourself.
 
 ## Standalone functions from {rlang}
 
-To help, we are going to use the standalone type-checking functions from {rlang}.
-We are kind-of skippng ahead because we have already installed them in our workspace; we'll deal with that later, after we use them.
+The {rlang} package provides standalone type-checking functions, which you can use in your package or project.
+Before showing how to install these functions into a project, we want to show you how you can use them.
+For *this* project, i.e. this article, I have already moved the files into place.
 
 For use in a script (or Quarto document), load {here} and {rlang}, then `source()` the "standalone" files.
 
@@ -73,7 +77,7 @@ source(here("R/import-standalone-obj-type.R"), local = TRUE)
 source(here("R/import-standalone-types-check.R"), local = TRUE)
 ```
 
-There are two families of checking functions, for scalars and vectors. 
+This makes a bunch of functions available. For type-checking, there are two families: for scalars and vectors. 
 
 ### Scalar checks
 
@@ -92,7 +96,7 @@ to_z_check <- function(x, middle = 1) {
 ```
 
 By putting the check at the beginning of the function, we can fail quickly.
-The error message lets us fail much more clearly:
+This error message lets us fail much more clearly:
 
 ```{r}
 #| error: true
@@ -123,20 +127,31 @@ check_environment()
 
 ### Vector checks
 
+The vector-checking functions are concerned with values that may have more than one element.
+As of Summer 2024, these are the functions available:
+
 ```r
 check_data_frame()
 check_logical()
 check_character()
 ```
 
-However, we don't have `check_numeric()`
+In essence, we can use these functions to check if an object is a:
+
+ - data frame, e.g. `penguins`
+ - logical vector, e.g. `c(TRUE, FALSE, TRUE)`
+ - character vector, e.g. `c("alpha", "bravo", "charlie")`
+
+However, there is not a `check_numeric()` available, so we could not check `penguins$bill_length_mm`.
+
+Fortunately, the standalone files offer some functions we can use to build our own checking functions.
 
 ## Roll your own
 
-This is a stripped-down version of existing function:
+This is a stripped-down version of the existing function, available in the [standalone file](https://github.com/r-lib/rlang/blob/f185e62f0eb14f95d2a3144947e6da3187677fd9/R/standalone-types-check.R#L460):
 
 ```r
-check_character <- function(x) {
+check_character <- function(x, allow_null = FALSE) {
 
   # predicate
   if (!missing(x)) {
@@ -151,17 +166,17 @@ check_character <- function(x) {
 
 This function has two parts
 
-1. A *predicate* section, returns `invisible(NULL)` if everything OK.
+1. A *predicate* section, returns `invisible(NULL)` if everything is OK.
 
 2. Call to a *stop* function, throws error with informative message.
 
    - `stop_input_type()` is available to us,
-   - it's in `import-standalone-obj-type.R`.
+   - it's [in `import-standalone-obj-type.R`](https://github.com/r-lib/rlang/blob/f185e62f0eb14f95d2a3144947e6da3187677fd9/R/standalone-obj-type.R#L298).
    
-We can write our own function `check_numeric()`
+This lets us write our own function `check_numeric()`:
 
-```r
-check_numeric <- function(x) {
+```{r}
+check_numeric <- function(x, allow_null = FALSE) {
 
   # predicate
   if (!missing(x)) {
@@ -174,13 +189,40 @@ check_numeric <- function(x) {
 }
 ```
 
+Please keep in mind that this is a *simplified* version of what `check_numeric()` might look like.
+Before writing your own function, you should look at the [source code for `check_character()`](https://github.com/r-lib/rlang/blob/f185e62f0eb14f95d2a3144947e6da3187677fd9/R/standalone-types-check.R#L460) to see more detail.
+
+Let's try this out by modifying `to_z_check_even_more()`:
+
+```{r}
+to_z_check_even_more <- function(x, middle = 1) {
+  
+  check_numeric(x) # this is "our" function, not a "standard" checker
+  check_number_decimal(middle)
+  
+  trim = (1 - middle)/2
+  (x - mean(x, na.rm = TRUE, trim = trim)) / sd(x, na.rm = TRUE)
+}
+```
+
+We should expect an error if we supply a something that is not numeric to the function:
+
+```{r}
+#| error: true
+to_z_check_even_more(penguins$sex, middle = 1)
+```
+
 ## Using in your work
+
+You can put the standalone files into your project by using `usethis::use_standalone()`:
 
 ```r
 usethis::use_standalone("r-lib/rlang", file = "types-check")
 ```
 
-This will put files into place in the `R` directory in your current project.
+This will put files into the `R` directory in your current project.
+Your next steps will depend on if your are running a script (or Quarto document), or building a package.
+In this context, we are running a Quarto document, but the more-common scenario is to use these functions in a package.
 
 ### Script or Quarto
 
@@ -211,15 +253,15 @@ There are two steps, to be run from R within your package-project:
    
 2. Make sure you import the {rlang} package.
 
-  ```r
-  usethis::use_package("rlang")
-  ```
+   ```r
+   usethis::use_package("rlang")
+   ```
 
-  - If you use {roxygen2} put this line in a conspicuous place:
+  - If you use {roxygen2} put this line in a conspicuous place, like a [`-package.R` file](https://github.com/r-lib/usethis/blob/224846399a51e2ec54c21b32307584fd9f106e7f/R/usethis-package.R#L6):
   
-  ```r
-  #' @import rlang
-  ```
+    ```r
+    #' @import rlang
+    ```
   
 There are some consequences:
 
@@ -229,7 +271,7 @@ There are some consequences:
 
   - All the functions in the standalone files are similarly available form within your package.
 
-FWIW, the Tidyverse team make this bargain with themselves, but they likely know much more about {rlang} than you do (they know more than I do!). 
+FWIW, the Tidyverse team make this bargain with themselves, but they know much more about {rlang} than the rest of us. 
 
 In the future, the Tidyverse team may provide a more-focused way of doing this.
 If/when they do, your standalone files will continue to work; you need not do anything.
