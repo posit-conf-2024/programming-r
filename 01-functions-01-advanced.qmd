@@ -31,7 +31,13 @@ download the course materials:
 usethis::use_course("posit-conf-2024/programming-r-exercises")
 ```
 
-Choose the option that means "yes".
+Choose the option that means "yes". 
+
+::: {.callout-tip}
+From the `programming-r-exercises` project, open the file `functions-01-advanced-type-check.R`.
+
+This will let you run the code shown here, incrementally, and incorporate your own experiments alongside.
+:::
 
 To get started, read [Josiah's blog post](https://josiahparry.com/posts/2024-06-30-type-safety/); we'll continue when you're done.
 
