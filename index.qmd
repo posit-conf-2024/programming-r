@@ -6,14 +6,14 @@ title: "From R User to R Programmer"
 
 by Emma Rand and Ian Lyttle
 
------
+------------------------------------------------------------------------
 
-:spiral_calendar: August 12, 2024  
-:alarm_clock:     09:00 - 17:00  
-:hotel:           ROOM TBD  
-:writing_hand:    [pos.it/conf](http://pos.it/conf)
+:spiral_calendar: August 12, 2024\
+:alarm_clock: 09:00 - 17:00\
+:hotel: ROOM TBD\
+:writing_hand: [pos.it/programming_r_24](http://pos.it/programming_r_24)
 
------
+------------------------------------------------------------------------
 
 ## Description
 
@@ -27,7 +27,7 @@ This is a one-day, hands-on workshop for those who have embraced the tidyverse a
 This workshop is for you if you...
 
 -   have experience equivalent to an introductory data science course using tidyverse
--   feel comfortable with the [Whole game](https://r4ds.hadley.nz/whole-game.html) chapter of [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/) by by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
+-   feel comfortable with the [Whole game](https://r4ds.hadley.nz/whole-game.html) chapter of [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
 
 ### Please note
 
@@ -37,7 +37,7 @@ These materials are under active development, which will likely continue until t
 
 In short:
 
--   Current versions of R & RStudio
+-   Install current versions of R & RStudio
 -   `install.packages(c("devtools", "tidyverse", "palmerpenguins", "here"))`
 
 More details on our [pre-requisites page](https://posit-conf-2024.github.io/programming-r/pre-reqs.html).
@@ -57,8 +57,8 @@ More details on our [pre-requisites page](https://posit-conf-2024.github.io/prog
 ## Instructors
 
 **Emma Rand**\
-*Senior Lecturer, University of York*\
-Emma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded project called Cloud-SPAN which trains researchers in cloud-based high performance computing for 'omics. She is a Software Sustainability Institute Fellow, a Teaching team lead for R Forwards and delivers data science training for the Royal Society of Biology and the Biochemical Society.
+*University of York*\
+Emma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded project called Cloud-SPAN which trains researchers in cloud-based high performance computing for 'omics. She is a Software Sustainability Institute Fellow, a Teaching team lead for R Forwards and delivers data science training for the Biochemical Society.
 
 **Ian Lyttle**\
 *Data Scientist, Schneider Electric*\
