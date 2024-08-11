@@ -90,7 +90,7 @@ data_manual <- bind_rows(data1952, data1957, data1962, data1967)
 
 What problems do you see?
 
-(I see two real problems, and one philisophical problem)
+(I see two real problems, and one philosophical problem)
 
 Run this example code, discuss with your neighbor.
 
@@ -529,7 +529,7 @@ Data from the survey informs curriculum and format decisions for future conf wor
 
 ::: incremental
 -   Emma
--   Thomas
+-   Lionel and Jonathan
 -   Mine Çetinkaya-Rundel, Posit
 -   **You** 🤗
 :::
