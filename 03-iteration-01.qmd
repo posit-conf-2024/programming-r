@@ -363,7 +363,7 @@ penguins |>
 
 . . .
 
--   `\(x)` is base syntax new in in 4.1.0 **Recommended**
+-   `\(x)` is base syntax new in 4.1.0 **Recommended**
 
 -   `~ .x` is fine but only works in tidyverse functions
 
@@ -387,8 +387,8 @@ Using a list:
 ``` r
 penguins |> 
   summarise(across(where(is.numeric), list(
-  sd_error, 
-  length)))
+    sd_error, 
+    length)))
 ```
 
 . . .
@@ -577,7 +577,7 @@ penguins |>
 -   `across()` iterates over columns
 
     -   choose columns with familiar `select()` spec
-    -   pass functions without their `()\`
+    -   pass functions without their `()`
     -   use anonymous functions to add arguments
     -   use a list to use multiple functions
     -   specify the names
